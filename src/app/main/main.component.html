@@ -1,0 +1,101 @@
+<h2>People Roster</h2>
+  <nav>
+    <a routerLink = "">To First Page</a>
+  </nav>
+<ul class="people">
+  <li *ngFor="let person of people"
+    [class.selected]="person === selectedPerson"
+    (click)="onSelect(person)">
+    <span class="badge">{{person.id}}
+</span> {{person.fname}}
+  </li>
+</ul>
+
+<div *ngIf="selectedPerson">
+
+  <h2>{{selectedPerson.fname | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedPerson.id}}</div>
+  <div>
+    <label><span>First Name:</span>
+      <input [(ngModel)] = "selectedPerson.fname" placeholder="First Name" > <br>
+    </label>
+    <label><span>Last Name:</span>
+      <input [(ngModel)] = "selectedPerson.lname" placeholder = "Last Name"> <br>
+    </label>
+    <label><span>Phone Number:</span>
+      <input [(ngModel)] = "selectedPerson.phone" placeholder = "000-000-0000"  pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength = "10"> <br>
+    </label>
+    <label><span>WID: </span>
+      <input [(ngModel)] = "selectedPerson.wid" placeholder = "888888888"> <br>
+    </label>
+    <label><span>Location: </span>
+      <select [(ngModel)] = "selectedPerson.location">
+        <option value = "Topeka">Topeka</option>
+        <option value = "Great Bend">Great Bend</option>
+        <option value = "Lauderdale">Lauderdale</option>
+        <option value = "Kansas City">Kansas City</option>
+        <option value = "Manhattan">Manhattan</option>
+        <option value = "Wichita">Wichita</option>
+      </select><br>
+    </label>
+    <label><span>Availability: </span>
+      <input [(ngModel)] = "selectedPerson.availability" placeholder = "M-T-W-TU-F-S-SU"> <br>
+    </label>
+  </div>
+
+</div>
+
+
+<table class = "chart">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Phone</th>
+      <th>WID</th>
+      <th>Location</th>
+      <th>Availability</th>
+    </tr>
+
+    <tr>
+      <td>
+        <ul>
+          <li *ngFor="let person of people">
+            {{person.fname}}
+          </li>
+        </ul>
+      </td>
+      <td>
+          <ul>
+              <li *ngFor="let person of people">
+                {{person.lname}}
+              </li>
+            </ul>
+      </td>
+      <td>
+          <ul>
+              <li *ngFor="let person of people">
+                {{person.phone}}
+              </li>
+            </ul>
+      </td>
+      <td>
+          <ul>
+              <li *ngFor="let person of people">
+                {{person.wid}}
+              </li>
+            </ul>
+      </td>
+      <td>
+          <ul>
+              <li *ngFor="let person of people">
+                {{person.location}}
+              </li>
+            </ul>
+      </td>
+      <td *ngFor = "let category of selectedPerson">
+        {{category.availability}}
+      </td>
+    </tr>
+
+</table>
+

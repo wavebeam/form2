@@ -1,0 +1,70 @@
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.people {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.people li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.people li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.people li:hover {
+  color: rgb(232, 205, 179);
+  background-color: #DDD;
+  left: .1em;
+}
+.people .text {
+  position: relative;
+  top: -3px;
+}
+.people .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 1em 1em 0 0.7em;
+  background-color: rgb(154, 130, 193);
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.chart {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%
+}
+
+.chart.td, .chart.th {
+  border: 1px solid rgb(162, 95, 255);
+  padding: 8px;
+}
+
+.chart.tr:nth-child(even){background-color: #f2f2f2}
+
+.chart.tr:hover{background-color: #ddd}
+
+.chart.th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(140, 125, 238);
+  color: rgb(235, 208, 255);
+}
